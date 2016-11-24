@@ -1,0 +1,25 @@
+// core profile tables
+	// --> ID && ROUTEID && DID && RID are global ids that get bumped  
+
+// Core member profile (id, name, gender, username, userpass, email, phone, cc info)
+CREATE TABLE "COREMemberProfile" (memberid ID++, firstName VARCHAR(35), lastname VARCHAR(35), 
+gender VARCHAR(20), username VARCHAR(12), userpass VARCHAR(30), email VARCHAR(35), phone VARCHAR(25), 
+creditcard VARCHAR(20), ccv VARCHAR(4), ccdate VARCHAR(4));
+
+// Member address (id, country, civicnum, postal, city, street, state)
+CREATE TABLE "MemberAddress" (memberid VARCHAR(9), country VARCHAR(20), civicnum VARCHAR(8), 
+postalcode VARCHAR(8), city VARCHAR(20), streetname VARCHAR(30), state VARCHAR(30));
+
+// Member Driver Profile (memberid + create driver id + status)
+CREATE TABLE "MemberDriverProfile" (memberid VARCHAR(9), diverid DID++, status 'active');
+
+// Member Rider Profile (memberid + create rider id + status)
+CREATE TABLE "MemberRiderProfile" (memberid VARCHAR(9), riderid RID++, status 'active')";
+
+// Member Driver Route Profile
+CREATE TABLE "DriverRouteProfile" (driverid VARCHAR(10), driverouteid DROUTEID++, begpc VARCHAR(), 
+endpc VARCHAR(), regularity VARCHAR(15), type VARCHAR(), begtime VARCHAR(), endtime VARCHAR(), numriders VARCHAR());
+
+// Member Rider Route Profile
+CREATE TABLE "RiderRouteProfile" (riderid VARCHAR(10), riderrouteid RROUTEID++, begpc VARCHAR(), 
+endpc VARCHAR(), regularity VARCHAR(15), type VARCHAR(), begtime VARCHAR(), endtime VARCHAR(), numriders VARCHAR());
