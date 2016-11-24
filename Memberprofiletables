@@ -6,6 +6,8 @@ TODO:
 -> add address rows in route profiles for when the full address + placename gets generated via integrated google maps app address finder
 -> define global variables
 -> finalize character lengths for variables
+-> think about adding vehicle information like license plate number
+-> rating id
 ...
 */
 
