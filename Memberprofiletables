@@ -16,7 +16,7 @@ TODO:
 	// --> ID && ROUTEID && DID && RID are global ids that get bumped  
 
 // Core member profile (id, name, gender, username, userpass, email, phone, cc info) 
-CREATE TABLE "COREMemberProfile" (memberid ID++, firstName VARCHAR(35), lastname VARCHAR(35), gender VARCHAR(20), username VARCHAR(12), userpass VARCHAR(30), email VARCHAR(35), phone VARCHAR(25), creditcard VARCHAR(20), ccv VARCHAR(4), ccdate VARCHAR(4));
+CREATE TABLE "COREMemberProfile" (memberid ID++, firstName VARCHAR(35), lastname VARCHAR(35), gender VARCHAR(20), username VARCHAR(12), userpass VARCHAR(30), email VARCHAR(35), phone VARCHAR(25), creditcard VARCHAR(20), ccv VARCHAR(4), ccdate VARCHAR(4), balance float(15));
 
 // Member address (id, country, civicnum, postal, city, street, state)
 CREATE TABLE "MemberAddress" (memberid VARCHAR(9), country VARCHAR(20), civicnum VARCHAR(8), postalcode VARCHAR(8), city VARCHAR(20), streetname VARCHAR(30), state VARCHAR(30));
