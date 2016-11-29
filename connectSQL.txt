@@ -1,0 +1,39 @@
+Connecting to Concordia’s MySQL Database Server Using SSH Client
+[The Following Instructions are for Windows Computers Only]
+1. Download and install an SSH client. ENCS computers already have SSH client installed. There are
+many free SSH client available. You may download and install one from here:
+http://users.encs.concordia.ca/~a_sohai/comp353/SSH/SSHSecureShellClient-3.2.9.exe
+2. To start SSH client, go to:
+Start => All Programs => SSH Secure Shell => Secure Shell Client
+3. From the SSH Client window, select File => Quick Connect
+4. Enter the following information in the authentication dialog box:
+Host Name: login.encs.concordia.ca
+User Name: <your ENCS username>
+Do not change Port Number and Authentication Method. Then click Connect.
+5. When prompted, type your ENCS password and then press Enter. If the SSH client asks you about
+saving the auto generated security key. You may ignore it.
+6. After successful authentication, you will get a linux shell like:
+[grace] [/home/a/a_sohai] >
+7. Type the following command to connect to MySQL server and press Enter:
+mysql -h clipper.encs.concordia.ca -u <MySQL username> -p
+Here,
+mysql: command for connecting to MySQL server
+-h : to specify host. For Cocordia’s MySQL server, the host is clipper.encs.concordia.ca
+-u : to specify MySQL username
+-p : to specify MySQL password
+Note: MySQL username and password are not the same as your ENCS username and password. You
+should have already received your MySQL username and password from Stan. Each group is given
+one username and password.
+8. When prompted for password, enter your MySQL password.
+9. After successful login, you should receive MySQL command prompt as:
+Welcome to the MySQL monitor. Commands end with ; or \g.
+Your MySQL connection id is 3515
+Server version: 5.1.38 Source distribution
+Type 'help;' or '\h' for help. Type '\c' to clear the current input
+statement.
+mysql>
+10. You can now start using MySQL. Check out with the following commands:
+mysql> show databases -- list the databases in your schema
+mysql> use <database name> -- to select a database to work with
+mysql> show tables -- to see the list of tables
+mysql> describe <table name> -- describes a table
