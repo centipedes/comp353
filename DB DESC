@@ -1,0 +1,72 @@
+mysql> show tables;
++--------------------+
+| Tables_in_ypc353_2 |
++--------------------+
+| comments           |
+| messages           |
+| ratings            |
+| rides              |
+| users              |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> desc comments;
++-------------+---------------+------+-----+---------+----------------+
+| Field       | Type          | Null | Key | Default | Extra          |
++-------------+---------------+------+-----+---------+----------------+
+| ID          | int(11)       | NO   | PRI | NULL    | auto_increment |
+| rideID      | int(11)       | YES  |     | NULL    |                |
+| commenterID | int(11)       | YES  |     | NULL    |                |
+| comment     | varchar(9999) | YES  |     | NULL    |                |
++-------------+---------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
+mysql> desc messages;
++------------------+---------------+------+-----+---------+----------------+
+| Field            | Type          | Null | Key | Default | Extra          |
++------------------+---------------+------+-----+---------+----------------+
+| ID               | int(11)       | NO   | PRI | NULL    | auto_increment |
+| sendID           | int(11)       | YES  |     | NULL    |                |
+| receiverUsername | varchar(255)  | YES  |     | NULL    |                |
+| message          | varchar(9999) | YES  |     | NULL    |                |
++------------------+---------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
+mysql> desc users;
++----------+--------------+------+-----+---------+----------------+
+| Field    | Type         | Null | Key | Default | Extra          |
++----------+--------------+------+-----+---------+----------------+
+| ID       | int(11)      | NO   | PRI | NULL    | auto_increment |
+| username | varchar(20)  | YES  |     | NULL    |                |
+| password | varchar(255) | YES  |     | NULL    |                |
+| email    | varchar(255) | YES  |     | NULL    |                |
+| status   | int(11)      | YES  |     | NULL    |                |
+| admin    | int(11)      | YES  |     | NULL    |                |
++----------+--------------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)
+
+mysql> desc
+    -> ratings;
++--------+---------+------+-----+---------+----------------+
+| Field  | Type    | Null | Key | Default | Extra          |
++--------+---------+------+-----+---------+----------------+
+| ID     | int(11) | NO   | PRI | NULL    | auto_increment |
+| rider  | int(11) | YES  |     | NULL    |                |
+| driver | int(11) | YES  |     | NULL    |                |
+| rating | int(11) | YES  |     | NULL    |                |
++--------+---------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
+mysql> desc rides;
++--------------+------------+------+-----+---------+----------------+
+| Field        | Type       | Null | Key | Default | Extra          |
++--------------+------------+------+-----+---------+----------------+
+| ID           | int(11)    | NO   | PRI | NULL    | auto_increment |
+| offerID      | int(11)    | YES  |     | NULL    |                |
+| riderID      | int(11)    | YES  |     | NULL    |                |
+| start_postal | varchar(6) | YES  |     | NULL    |                |
+| end_postal   | varchar(6) | YES  |     | NULL    |                |
+| status       | int(11)    | YES  |     | NULL    |                |
+| deleted      | int(11)    | YES  |     | NULL    |                |
++--------------+------------+------+-----+---------+----------------+
+7 rows in set (0.00 sec)
