@@ -10,7 +10,7 @@ TODO:
 -> change-password method to accurately update in db
 -> 
 
--> ride ID page : comments
+-> ride ID page : comments [DONE]
 -> Messages: delete/archive
 -> notifications? at least on the index page next to messages href
 
