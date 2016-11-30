@@ -27,21 +27,21 @@ session_start(); ?>
 				<center>
 					<h2> Profile </h2>
 					<?php
-						echo 'Hello '.$userName.'';?>
-					<form id="edit-profile" action="actions.php" method="post">
-						<label for="your-user">Change Username</label><br />
-						<input type="text" name="change-user" /><br />
-						<input type="hidden" value="changeusergo" name="actionSelect" />
-						<input type="submit" name="go" value="Update Password" />
-						<label for="email">Update Email</label><br />
-						<input type="text" name="change-email" /><br />
-						<input type="hidden" value="changeemailgo" name="actionSelect" />
-						<input type="submit" name="go" value="Update Email" />
-						<label for="email">Update Password</label><br />
-						<input type="text" name="change-password" /><br />
-						<input type="hidden" value="changepassgo" name="actionSelect" />
-						<input type="submit" name="go" value="Update Password" />
-					</form>
+						if(isset($_SESSION["userName"])) {
+							echo 'Hello, '.$_SESSION["userName"]."<br />";
+							echo '<a href="./profile/edit-username.php"> Change Username</a><br />';
+							echo '<a href="./profile/mybalance.php"> My Balance</a><br />';
+							echo '<a href="./profile/edit-address.php"> Edit my Address</a><br />';
+							echo '<a href="./profile/edit-billing.php"> Edit my Billing Information</a><br />';
+							echo '<a href="./profile/myratings.php"> My Ratings</a><br />';
+							echo '<a href="./profile/delete.php"> Deactivate</a><br />';
+							echo '<a href="./logout.php"> Logout</a><br />';					
+						} else {
+							echo '<a href="./register.php"> Register </a><br />';
+							echo '<a href="./login.php"> Login </a><br />';
+							echo '<a href="./forgotPassword.php"> Forgot your Password? </a><br />';
+						}
+					?>
 				</center>
 			</div>
 		</div>	
