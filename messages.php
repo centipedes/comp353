@@ -40,7 +40,7 @@ if (isset($_SESSION['userName'])) {
 						echo '<p> You are not logged in, you cannot see messages! </p>';
 					} else {
 						echo "<a href='./sendMessage.php'>Send Message</a> <br />";
-						// create table of rides
+						// create table of messages
 						if (mysql_num_rows($res) != 0) {
 							$table =  "<table>";
 							$table .= "<tr>";
