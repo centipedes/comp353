@@ -62,6 +62,20 @@ switch($actionSelect){
 		echo 'Click <a href="./">here</a> to go home.';	
 	
 	break;
+
+	case 'send-message':
+		
+		$senderId		= $_SESSION['id'];
+		$messageTo	 	= $_POST['messageTo'];
+		$message		= $_POST['message'];		
+		
+		$query    =    "insert into messages(sendID, receiverID, message)values('$senderId','$messageTo','$message')";
+		$res    =    mysql_query($query);		
+		
+		echo 'Your message has been send to '.$messageTo.'.<br />';
+		echo 'Click <a href="./">here</a> to go home.';	
+	
+	break;
 	
 	case 'change-password':
 		$newPassword		=	$_POST['change-pw'];
@@ -78,7 +92,7 @@ switch($actionSelect){
 		
 	default:
 		
-		echo 'Restricted Page';
+		echo 'Restricted page, please leave.';
 
 } 
 
