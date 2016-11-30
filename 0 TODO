@@ -6,6 +6,7 @@ TODO:
 -> MAKE SURE THAT PASSWORD GETS UPDATED PROPERLY via ACTIONS.PHP RE CHANGEPASSWORD.PHP, esp re SQL
 -> change-username method in actions.php
 
+-> ride ID page : comments
 -> Messages: delete/archive
 -> notifications? at least on the index page next to messages href
 
