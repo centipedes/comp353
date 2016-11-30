@@ -4,11 +4,11 @@ session_start();
 include('connDb.php');
 if (isset($_SESSION['userName'])) {
 
-	$userID = $_SESSION['id'];
-	$query 	= "SELECT * FROM messages WHERE receiverID = '$userID'";
+	$user = $_SESSION['userName'];
+	$query 	= "SELECT *, (SELECT username FROM users where ID = sendID) as sendUser  FROM messages WHERE receiverUsername = '$user'";
 	$res 	= mysql_query($query);
 }
-
+ 
 ?>
 
 <html>
@@ -16,6 +16,15 @@ if (isset($_SESSION['userName'])) {
 	<head>
 		<link rel="stylesheet" type="text/css" href="./styles/stylesheet.css"/>
 		<title> Velocity - Messages </title>
+		<style>
+		table {
+			width: 50%;
+		}
+		tr:nth-child(even) {background-color: #f2f2f2}
+		th, td {
+			border-bottom: 1px solid #ddd;
+		}
+		</style>
 	</head>
 
 	<body>
@@ -50,7 +59,7 @@ if (isset($_SESSION['userName'])) {
 							while($row = mysql_fetch_array($res)) {
 							    //$j = $i['whatIwant'];
 								$table .= "<tr>";
-								$table .= "<td>".$row['sendID']."</td><td>".$row['message']."</td><td><a href='./sendMessage.php?sendTo=".$row['sendID']."'>Reply</a></td>";
+								$table .= "<td>".$row['sendUser']."</td><td>".$row['message']."</td><td><a href='./sendMessage.php?sendTo=".$row['sendUser']."'>Reply</a></td>";
 								$table .= "</tr>";
 							}
 							
