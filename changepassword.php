@@ -28,7 +28,7 @@ session_start(); ?>
 					<h2> Change Password </h2>
 					<form id="change-pw" action="actions.php" method="post">
 						<label for="current-pw">Current Password</label><br />
-						<input type="text" name="curr-pw" /><br />
+						<input type="password" name="curr-pw" /><br />
 						<label for="new-pw">New Password</label><br />
 						<input type="password" name="new-pw" /><br />
 						<input type="hidden" value="change-password" name="actionSelect" />
