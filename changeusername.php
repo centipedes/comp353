@@ -25,13 +25,12 @@ session_start(); ?>
 		<div id="content-wrap">
 			<div id="content">
 				<center>
-					<h2> Change Password </h2>
-					<form id="change-pw" action="actions.php" method="post">
-						<label for="new-pw">New Password</label><br />
-						<input type="password" name="new-pw" /><br /><br/>
-						<label for="new-pw-re">Re-Enter Password</label><br />
-						<input type="password" name="new-pw-re" /><br /><br />
-						<input type="hidden" value="change-password" name="actionSelect" />
+					<h2> Change Username </h2>
+					<p>Please select a new username.</p>
+					<form id="change-username" action="actions.php" method="post">
+						<label for="new-uname">New Username</label><br />
+						<input type="text" name="new-uname" /><br /><br/>
+						<input type="hidden" value="change-username" name="actionSelect" />
 						<input type="submit" name="go" value="Submit" />
 					</form>
 				</center>

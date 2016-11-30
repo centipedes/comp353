@@ -1,18 +1,17 @@
-<?php
-session_start(); ?>
+<?php session_start(); ?>
 
 <html>
 
 	<head>
 		<link rel="stylesheet" type="text/css" href="./styles/stylesheet.css"/>
-		<title> Velocity </title>
+		<title> Velocity - COMP 353 </title>
 	</head>
 
 	<body>
 		<!-- BEGIN HEADER -->
 		<div id="header">
 			<div id="logo">
-				<center><h1>Velocity</h1></center>
+				<center><h2>My Balance</h2></center>
 			</div>
 		</div>
 		<!-- END HEADER -->
@@ -22,6 +21,32 @@ session_start(); ?>
 		</div>
 		<!-- END NAV -->
 		<!-- BEGIN CONTENT -->
+		<div id="content-wrap">
+			
+			<div id="content">
+			<!-- NAV PART -->
+			<?php 
+				if(isset($_SESSION["userName"])) {
+					echo 'Welcome, '.$_SESSION["userName"]."<br />";
+					echo '<a href="./offerRide.php"> Offer Ride</a><br />';
+					echo '<a href="./rides.php"> View Ride Offers</a><br />';
+					echo '<a href="./myRides.php"> My Rides</a><br />';
+					echo '<a href="./messages.php"> Messages</a><br />';
+					echo '<a href="./profile.php"> Profile</a><br />';
+					if ($_SESSION['admin']) {
+						echo '<a href="./admin.php">Admin</a><br />';
+					}
+					echo '<a href="./logout.php"> Logout</a><br />';
+					
+				} else {
+					echo '<a href="./register.php"> Register </a><br />';
+					echo '<a href="./login.php"> Login </a><br />';
+					echo '<a href="./forgotPassword.php"> Forgot your Password? </a><br />';
+				}
+			?>
+			<!-- <a href="/logout.php"> Logout </a><br /> -->
+			<!-- END NAV PART -->
+			<!-- BEGIN CONTENT -->
 		<div id="content-wrap">
 			<div id="content">
 				<center>
@@ -49,6 +74,12 @@ session_start(); ?>
 			</div>
 		</div>	
 		<!-- END CONTENT -->
+		<!-- END CONTENT -->
+
+			</div>
+
+		</div>	
+		<!-- END CONTENT -->
 		<!-- BEGIN FOOTER -->
 		<div id="footer">
 		</div>
@@ -56,4 +87,3 @@ session_start(); ?>
 	</body>
 
 </html>
-
